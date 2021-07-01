@@ -15,7 +15,6 @@ public class AgeController {
     @GetMapping("{day}/{moth}/{year}")
     public Integer calculeAge(@PathVariable Integer day, @PathVariable Integer moth, @PathVariable Integer year) {
         LocalDate data = LocalDate.of(year, moth, day);
-        System.out.println(data);
         Period difference = Period.between(data, LocalDate.now());
 
         return difference.getYears();
